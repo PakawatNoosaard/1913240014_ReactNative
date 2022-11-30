@@ -8,9 +8,13 @@ import CustomComponent from "./components/CustomComponent";
 import Logo from "./components/Logo";
 import LotsOfGreeting from "./components/LotsOfGreeting";
 import MyCustomTextWith from "./components/MyCustomTextWith";
+import Count from "./components/Count";
+import TxtInput1 from "./components/TxtInput1";
+import UserNamePassword from "./components/UserNamePassword";
+
 const App = () => {
   return (
-    <View>
+    <View style={styles.container}>
       {/* <Information/> */}
       {/* <Welcome/> */}
       {/* <Practice1_StyleSheet /> */}
@@ -19,9 +23,20 @@ const App = () => {
       {/* <CustomComponent/> */}
       {/* <Logo/> */}
       {/* <LotsOfGreeting/> */}
-      <MyCustomTextWith />
+      {/*<MyCustomTextWith />*/}
+      {/*<Count/>*/}
+      {/*<TxtInput1/>*/}
+      <UserNamePassword/>
     </View>
   );
 };
+
+const styles = StyleSheet.create(
+  {
+      container:{flex:1 , justifyContent:'center', alignItems:'center'}
+  }
+)
+
 export default App;
+
 
