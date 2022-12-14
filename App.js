@@ -1,42 +1,43 @@
-import { StyleSheet, Text, View } from "react-native";
+import { View, Text, Button } from "react-native";
 import React from "react";
-import Information from "./components/Information";
-import Practice1_StyleSheet from "./components/Practice1_StyleSheet";
-import Welcome from "./components/Welcome";
-import TxtInput from "./components/TxtInput";
-import CustomComponent from "./components/CustomComponent";
-import Logo from "./components/Logo";
-import LotsOfGreeting from "./components/LotsOfGreeting";
-import MyCustomTextWith from "./components/MyCustomTextWith";
-import Count from "./components/Count";
-import TxtInput1 from "./components/TxtInput1";
-import UserNamePassword from "./components/UserNamePassword";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
+import HomePost from "./screens/HomePost";
+import CreatePost from "./screens/CreatePost";
+import FirstPage from "./screens/FirstPage";
+import SecondPage from "./screens/SecondPage";
+
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      {/* <Information/> */}
-      {/* <Welcome/> */}
-      {/* <Practice1_StyleSheet /> */}
-      {/* <TxtInput/> */}
-      
-      {/* <CustomComponent/> */}
-      {/* <Logo/> */}
-      {/* <LotsOfGreeting/> */}
-      {/*<MyCustomTextWith />*/}
-      {/*<Count/>*/}
-      {/*<TxtInput1/>*/}
-      <UserNamePassword/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator 
+       initialRouteName="Home"
+       screenOptions={{
+        headerStyle:{
+          backgroundColor :'#66cdaa'
+        },
+        headerTintColor:'#ffff',
+        headerTitleStyle:{
+          fontWeight:'bold'
+        }
+       }}
+      >
+{/*     <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} /> 
+        <Stack.Screen name="HomePost" component={HomePost} />
+        <Stack.Screen name="CreatPost" component={CreatePost} /> */}
+        <Stack.Screen name="FirstPage" component={FirstPage} />
+        <Stack.Screen name="SecondPage" component={SecondPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create(
-  {
-      container:{flex:1 , justifyContent:'center', alignItems:'center'}
-  }
-)
-
 export default App;
-
 
