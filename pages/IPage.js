@@ -8,15 +8,11 @@ const IPage = ({ navigation }) => {
       <Text>This is the I Page</Text>
       <Button
         title="Go to IIPage"
-        onPress={() => navigation.navigate("IIPage",{
-            email:'reactnative@tni.ac.th'
-        })}
+        onPress={() => navigation.navigate("IIPage")}
       />
       <Button
         title="Go to IIIPage"
-        onPress={() => navigation.navigate("IIIPage",{
-            email:'reactnative@tni.ac.th'
-        })}
+        onPress={() => navigation.navigate("IIIPage")}
       />
     </View>
   );

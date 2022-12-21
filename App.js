@@ -9,7 +9,9 @@ import HomePost from "./screens/HomePost";
 import CreatePost from "./screens/CreatePost";
 import FirstPage from "./screens/FirstPage";
 import SecondPage from "./screens/SecondPage";
-
+import IPage from "./pages/IPage";
+import IIPage from "./pages/IIPage";
+import IIIPage from "./pages/IIIPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,9 +33,12 @@ const App = () => {
 {/*     <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="About" component={AboutScreen} /> 
         <Stack.Screen name="HomePost" component={HomePost} />
-        <Stack.Screen name="CreatPost" component={CreatePost} /> */}
+        <Stack.Screen name="CreatPost" component={CreatePost} /> 
         <Stack.Screen name="FirstPage" component={FirstPage} />
-        <Stack.Screen name="SecondPage" component={SecondPage} />
+        <Stack.Screen name="SecondPage" component={SecondPage} /> */}
+        <Stack.Screen name="IPage" component={IPage} />
+        <Stack.Screen name="IIPage" component={IIPage} />
+        <Stack.Screen name="IIIPage" component={IIIPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
