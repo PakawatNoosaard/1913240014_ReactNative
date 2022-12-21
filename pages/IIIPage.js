@@ -1,21 +1,28 @@
-import { View, Text, Button } from 'react-native'
-import React from 'react'
+import { View, Text, Button, StyleSheet, TextInput } from "react-native";
+import React, { useState } from "react";
+import { styles } from "../components/styles";
 
-const IIIPage = () => {
-    return (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          
-          <Text>This is the III Page</Text>
-          <Button
-            title="Go to IPage"
-            onPress={() => navigation.navigate("IPage")}
-          />
-          <Button
-            title="Go to IIPage"
-            onPress={() => navigation.navigate("IIPage")}
-          />
-        </View>
-      );
-}
+const IIIPage = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+        <View style={styles.container}>
+      <Text style={styles.textTopStyle}>This is The IIIPage</Text>
+      <Button
+        title="Go to IPage"
+        onPress={() => navigation.navigate("IPage")}
+      />
+      <Button
+        title="Go to IIPage"
+        onPress={() => navigation.navigate("IIPage")}
+      />
+      </View>
+      <View style={{  justifyContent: "flex-end" }}>
+        <Text style={styles.textBottomSytel}>
+          Thai-Nichi Institute of Technology
+        </Text>
+      </View>
+    </View>
+  );
+};
 
 export default IIIPage;
