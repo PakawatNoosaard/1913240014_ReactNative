@@ -4,25 +4,55 @@ import { styles } from "../components/styles";
 
 const IIPage = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-        <View style={styles.container}>
-      <Text style={styles.textTopStyle}>This is The IIPage</Text>
-      <Button
-        title="Go to IPage"
-        onPress={() => navigation.navigate("IPage")}
-      />
-      <Button
-        title="Go to IIIPage"
-        onPress={() => navigation.navigate("IIIPage")}
-      />
-      </View>
-      <View style={{  justifyContent: "flex-end" }}>
-        <Text style={styles.textBottomSytel}>
-          Thai-Nichi Institute of Technology
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1, padding: 16 }}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              fontSize: 25,
+              textAlign: 'center',
+              marginBottom: 16
+            }}>
+            This is Second Page under Second Page Option
+          </Text>
+          <Button
+            title="Go to I Page"
+            onPress={
+              () => navigation.navigate('IPage')
+            }
+          />
+          <Button
+            title="Go to III Page"
+            style = {{padding:20}}
+            onPress={
+              () => navigation.navigate('IIIPage')
+            }
+          />
+        </View>
+        <Text
+          style={{
+            fontSize: 18,
+            textAlign: 'center',
+            color: 'grey'
+          }}>
+          React Navigate Drawer
+        </Text>
+        <Text
+          style={{
+            fontSize: 16,
+            textAlign: 'center',
+            color: 'grey'
+          }}>
+          Create by: YourName
         </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
-};
+}
 
 export default IIPage;

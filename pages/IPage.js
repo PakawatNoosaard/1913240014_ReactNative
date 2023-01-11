@@ -1,28 +1,57 @@
-import { View, Text, Button, StyleSheet, TextInput } from "react-native";
+import { View, Text, Button, StyleSheet, TextInput, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import { styles } from "../components/styles";
 
 const IPage = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-        <View style={styles.container}>
-      <Text style={styles.textTopStyle}>This is The IPage</Text>
-      <Button
-        title="Go to IIPage"
-        onPress={() => navigation.navigate("IIPage")}
-      />
-      <Button
-        title="Go to IIIPage"
-        onPress={() => navigation.navigate("IIIPage")}
-      />
-      </View>
-      <View style={{  justifyContent: "flex-end" }}>
-        <Text style={styles.textBottomSytel}>
-          Thai-Nichi Institute of Technology
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 , padding: 16}}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              fontSize: 25,
+              textAlign: 'center',
+              marginBottom: 16
+            }}>
+            This is the First Page under First Page Option
+          </Text>
+          <Button
+            onPress={
+              () => navigation.navigate('IIPage')
+            }
+            title="Go to II Page"            
+          />
+          <Button
+            onPress={
+              () => navigation.navigate('IIIPage')
+            }
+            title="Go to III Page"            
+          />
+        </View>
+        <Text
+          style={{
+            fontSize: 18,
+            textAlign: 'center',
+            color: 'grey'
+          }}>
+          React Navigate Drawer 
+        </Text>
+        <Text
+          style={{
+            fontSize: 16,
+            textAlign: 'center',
+            color: 'grey'
+          }}>
+          Create by: YourName
         </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
-};
+}
 
 export default IPage;
