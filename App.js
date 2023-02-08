@@ -1,87 +1,66 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, Button } from 'react-native'
+import React from 'react'
+
+import { NavigationContainer } from '@react-navigation/native';
 import {
   createDrawerNavigator,
-  DrawerContentScrollView,
   DrawerItem,
-  DrawerItemList,
-} from "@react-navigation/drawer";
+  DrawerContentScrollView,
+  DrawerItemList
+} from '@react-navigation/drawer'
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomeScreen2 from './screens/HomeScreen2'
+import ProductScreen from './screens/ProductScreen'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DetailScreen from './screens/DetailScreen'
 
-import ProductScreen from "./screens/ProductScreen";
-import DetailScreen from "./screens/DetailScreen";
-
-function Tab2() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="Home" component={DetailScreen}></Stack.Screen>
-    </Stack.Navigator>
-  );
-}
-function Stack2() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="Setting" component={ProductScreen}></Stack.Screen>
-    </Stack.Navigator>
-  );
-}
 function CustomDrawerContent(props) {
+  const { navigation } = props
   return (
     <DrawerContentScrollView {...props}>
       <DrawerItemList {...props} />
-      <DrawerItem
-        label="Close drawer"
-        onPress={() => props.navigation.closeDrawer()}
-      />
+      <DrawerItem label={'Close Drawer'} onPress={() => navigation.closeDrawer()} />
     </DrawerContentScrollView>
   );
 }
 
 const Stack = createNativeStackNavigator();
+
+function ProductStack(){
+  return(
+    <Stack.Navigator screenOptions={{headerStyle:{
+      backgroundColor:'#00dfdf'
+    },headerTintColor:'#fff',
+    headerTitleStyle:{
+      fontWeight:'bold'
+    }}}>
+      <Stack.Screen name="Product" component={ProductScreen}/>
+      <Stack.Screen name="Detail" component={DetailScreen}/>
+    </Stack.Navigator>
+  )
+}
+
 const Drawer = createDrawerNavigator();
-const Tab = createBottomTabNavigator();
-
-
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator
-      screenOptions={{
-        drawerStyle: {
-          width: 240,
-        },
-        drawerActiveBackgroundColor: "#BFE6FF",
-      }}
-      useLegacyImplementation
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
-    >
-      <Drawer.Screen name="Home" component={DetailScreen} />
-      <Drawer.Screen name="Product" component={ProductScreen} />
-      {/* <Drawer.Screen name="Product" component={closeDrawer} /> */}
-      
+    <Drawer.Navigator screenOptions={{
+      drawerStyle: {
+        backgroundColor: '#fff', width: 240
+      }
+    }} useLegacyImplementation drawerContent={(props) => <CustomDrawerContent {...props} />}>
+      <Drawer.Screen name='Home' component={HomeScreen2} />
+      <Drawer.Screen name='Product' component={ProductStack} />
     </Drawer.Navigator>
-  );
+  )
 }
-
-
 
 const App = () => {
   return (
     <NavigationContainer>
-      <MyDrawer/>
+      <MyDrawer />
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default App;
+export default App
